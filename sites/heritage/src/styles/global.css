@@ -250,6 +250,10 @@ nav a[aria-current="page"] {
   padding: 0 0 2.25rem;
 }
 
+main > .section:first-child {
+  padding-top: 1.75rem;
+}
+
 .section h2 {
   margin: 0 0 1rem;
   font-family: "Alfa Slab One", serif;
@@ -387,6 +391,10 @@ nav a[aria-current="page"] {
 
   .section {
     padding: 0 0 3rem;
+  }
+
+  main > .section:first-child {
+    padding-top: 2.25rem;
   }
 
   .site-footer {
