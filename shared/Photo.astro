@@ -16,11 +16,12 @@ const {
   width,
   height,
 } = Astro.props;
+const resolvedSrc = `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 ---
 
 <figure class="photo">
   <div class="photo-frame" style={`aspect-ratio: ${ratio}`}>
-    <img src={src} alt={alt} width={width} height={height} loading="lazy" />
+    <img src={resolvedSrc} alt={alt} width={width} height={height} loading="lazy" />
   </div>
   {caption && <figcaption>{caption}</figcaption>}
 </figure>

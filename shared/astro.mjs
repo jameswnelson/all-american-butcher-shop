@@ -7,6 +7,12 @@ export function butcherConfig(configFile, port) {
   const repoRoot = path.resolve(siteDir, "../..");
 
   return defineConfig({
+    site: process.env.SITE || undefined,
+    base: process.env.BASE
+      ? process.env.BASE.endsWith("/")
+        ? process.env.BASE
+        : `${process.env.BASE}/`
+      : "/",
     server: { port, host: true },
     publicDir: path.resolve(repoRoot, "shared/public"),
     devToolbar: { enabled: false },
