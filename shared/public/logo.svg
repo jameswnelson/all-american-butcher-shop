@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">All American Butcher Shop</title>
+  <desc id="logoDesc">Vintage cream label with a U.S. flag, navy and oxblood lettering, five stars, and the line Praise God for wholesome meats.</desc>
+  <defs>
+    <clipPath id="label">
+      <path d="M36 28h728v584H36zM20 12h28v28H20zM752 12h28v28h-28zM20 600h28v28H20zM752 600h28v28h-28z"/>
+    </clipPath>
+  </defs>
+  <path fill="#F8E9DC" stroke="#1C1412" stroke-width="6" d="M28 20h744v600H28z"/>
+  <path fill="#F8E9DC" d="M16 8h40v40H16zM744 8h40v40h-40zM16 592h40v40H16zM744 592h40v40h-40z"/>
+  <path fill="none" stroke="#1C1412" stroke-width="2" d="M44 36h712v568H44z"/>
+
+  <!-- Flag -->
+  <g transform="translate(400 78)">
+    <path fill="#7A1218" d="M-70 8c28-22 56-22 84 0 18-20 40-28 70-18-22 18-18 38 4 58-32 6-54-2-74-22-30 22-58 18-86-2 12-16 8-32 2-16z"/>
+    <path fill="#0E1C33" d="M-70 10c8-6 22-14 36-16v28c-14 4-26 2-36-4z"/>
+    <path fill="#FFF8F1" d="M-32 0h96c8 8 14 18 16 28H-28z" opacity=".9"/>
+    <path fill="#7A1218" d="M-28 8h90v6H-26zm-2 12h86v5H-24z"/>
+  </g>
+
+  <line x1="168" y1="168" x2="292" y2="168" stroke="#0E1C33" stroke-width="3"/>
+  <line x1="508" y1="168" x2="632" y2="168" stroke="#0E1C33" stroke-width="3"/>
+  <text x="400" y="178" text-anchor="middle" fill="#0E1C33" font-family="Times New Roman, Times, serif" font-size="36" font-weight="700" letter-spacing="8">ALL AMERICAN</text>
+
+  <text x="400" y="268" text-anchor="middle" fill="#7A1218" font-family="Times New Roman, Times, serif" font-size="72" font-weight="800" letter-spacing="4">BUTCHER SHOP</text>
+
+  <g fill="#0E1C33" transform="translate(400 312)">
+    <polygon points="0,-12 3.5,-3.8 12,-3.8 5.2,1.4 7.6,10 0,5 -7.6,10 -5.2,1.4 -12,-3.8 -3.5,-3.8" transform="translate(-96 0)"/>
+    <polygon points="0,-12 3.5,-3.8 12,-3.8 5.2,1.4 7.6,10 0,5 -7.6,10 -5.2,1.4 -12,-3.8 -3.5,-3.8" transform="translate(-48 0)"/>
+    <polygon points="0,-12 3.5,-3.8 12,-3.8 5.2,1.4 7.6,10 0,5 -7.6,10 -5.2,1.4 -12,-3.8 -3.5,-3.8"/>
+    <polygon points="0,-12 3.5,-3.8 12,-3.8 5.2,1.4 7.6,10 0,5 -7.6,10 -5.2,1.4 -12,-3.8 -3.5,-3.8" transform="translate(48 0)"/>
+    <polygon points="0,-12 3.5,-3.8 12,-3.8 5.2,1.4 7.6,10 0,5 -7.6,10 -5.2,1.4 -12,-3.8 -3.5,-3.8" transform="translate(96 0)"/>
+  </g>
+
+  <line x1="220" y1="338" x2="580" y2="338" stroke="#0E1C33" stroke-width="2"/>
+
+  <text x="400" y="386" text-anchor="middle" fill="#0E1C33" font-family="Times New Roman, Times, serif" font-size="22" font-weight="700" letter-spacing="6">PREMIUM QUALITY MEATS</text>
+  <text x="400" y="424" text-anchor="middle" fill="#7A1218" font-family="Times New Roman, Times, serif" font-size="18" font-weight="700" letter-spacing="4">LOCALLY SOURCED  ·  CUSTOM CUTS</text>
+
+  <rect x="168" y="468" width="464" height="64" fill="none" stroke="#0E1C33" stroke-width="2"/>
+  <line x1="188" y1="500" x2="228" y2="500" stroke="#0E1C33" stroke-width="2"/>
+  <line x1="572" y1="500" x2="612" y2="500" stroke="#0E1C33" stroke-width="2"/>
+  <text x="400" y="508" text-anchor="middle" fill="#0E1C33" font-family="Times New Roman, Times, serif" font-size="18" font-weight="700" letter-spacing="3">PRAISE GOD FOR WHOLESOME MEATS.</text>
+</svg>

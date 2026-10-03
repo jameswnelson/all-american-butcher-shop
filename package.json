@@ -1,0 +1,12 @@
+{
+  "name": "all-american-butcher-shop",
+  "private": true,
+  "workspaces": [
+    "sites/heritage"
+  ],
+  "scripts": {
+    "dev": "npm -w heritage run dev",
+    "build": "npm -w heritage run build",
+    "preview": "npm -w heritage run preview"
+  }
+}

@@ -1,0 +1,79 @@
+---
+import Field from "@shared/Field.astro";
+import Photo from "@shared/Photo.astro";
+import { mapsUrl, site } from "@shared/site";
+import Layout from "../layouts/Layout.astro";
+
+const shopPhotos = [site.photos.exterior, site.photos.cutting, site.photos.case];
+---
+
+<Layout>
+  <section class="hero">
+    <div class="wrap hero-body">
+      <Field class="lede block" field={site.shortDescription} as="p">
+        {site.shortDescription.value}
+      </Field>
+      <div class="actions">
+        <Field field={site.phone}>
+          <a class="btn primary" href={site.phoneHref.value}>Call {site.phone.value}</a>
+        </Field>
+        <Field field={site.mapQuery}>
+          <a class="btn secondary" href={mapsUrl(site.mapQuery.value)}>Get directions</a>
+        </Field>
+      </div>
+      <div class="panel hours">
+        <h2 class="section-label">Hours</h2>
+        <Field class="block" field={site.hours} as="div">
+          <ul>
+            {
+              site.hours.value.map((row) => (
+                <li>
+                  <span>{row.days}</span>
+                  <span>{row.time}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </Field>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="section-label">The shop</p>
+    <div class="grid">
+      {
+        shopPhotos.map((photo) => (
+          <Field field={photo} as="div">
+            <Photo
+              src={photo.value.src}
+              alt={photo.value.alt}
+              caption={photo.value.caption}
+              width={photo.value.width}
+              height={photo.value.height}
+              ratio="4 / 3"
+            />
+          </Field>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="section-label">What we cut</p>
+    <h2>Custom work for your animals.</h2>
+    <Field class="block" field={site.services} as="div">
+      <div class="grid">
+        {
+          site.services.value.slice(0, 3).map((service) => (
+            <article class="service">
+              <h3>{service.name}</h3>
+              <p>{service.summary}</p>
+            </article>
+          ))
+        }
+      </div>
+    </Field>
+    <p><a href="/services">See all services</a></p>
+  </section>
+</Layout>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  caption: string;
+  source?: string;
+  ratio?: string;
+}
+
+const { caption, source = "No photoshoot yet", ratio = "4 / 3" } = Astro.props;
+---
+
+<figure class="photo-ph" style={`aspect-ratio: ${ratio}`} title={source}>
+  <span class="ph-flag">Placeholder photo</span>
+  <span class="photo-ph-title">{caption}</span>
+  <span class="photo-ph-sub">Awaiting real photography — do not ship</span>
+</figure>

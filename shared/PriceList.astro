@@ -1,0 +1,52 @@
+---
+import Field from "./Field.astro";
+import { site } from "./site";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const list = site.priceList;
+---
+
+<Field class={`price-list${className ? ` ${className}` : ""}`} field={list} as="div">
+  {
+    list.value.sections.map((section) => (
+      <section class="price-section">
+        <h3 class="price-animal">{section.title}</h3>
+        {section.groups.map((group) => (
+          <div class="price-group">
+            <h4 class="price-group-title">{group.title}</h4>
+            <ul class="price-rows">
+              {group.items.map((item) => (
+                <li>
+                  <span>{item.label}</span>
+                  <strong>{item.price}</strong>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    ))
+  }
+  <div class="price-travel">
+    <h3 class="price-animal">Travel</h3>
+    <ul class="price-rows">
+      {
+        list.value.travel.map((row) => (
+          <li>
+            <span>
+              <strong>{row.fee}</strong>
+              {" — "}
+              {row.areas}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="price-note">{list.value.killPen}</p>
+    <p class="price-note">{list.value.appliesTo}</p>
+  </div>
+</Field>

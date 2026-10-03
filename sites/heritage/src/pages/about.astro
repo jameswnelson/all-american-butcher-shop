@@ -1,0 +1,39 @@
+---
+import Field from "@shared/Field.astro";
+import Photo from "@shared/Photo.astro";
+import { site } from "@shared/site";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About">
+  <section class="section wrap" style="padding-top: 2.5rem">
+    <p class="section-label">About</p>
+    <Field field={site.aboutHeadline} as="h2">
+      {site.aboutHeadline.value}
+    </Field>
+    <div class="split">
+      <div class="prose">
+        <Field class="block" field={site.aboutLead} as="p">
+          {site.aboutLead.value}
+        </Field>
+        <Field class="block" field={site.aboutBody} as="div">
+          {site.aboutBody.value.map((paragraph) => <p>{paragraph}</p>)}
+        </Field>
+        <p>
+          Owned by{" "}
+          <Field field={site.owners} as="span">{site.owners.value}</Field>.
+        </p>
+      </div>
+      <Field field={site.photos.owners} as="div">
+        <Photo
+          src={site.photos.owners.value.src}
+          alt={site.photos.owners.value.alt}
+          caption={site.photos.owners.value.caption}
+          width={site.photos.owners.value.width}
+          height={site.photos.owners.value.height}
+          ratio="4 / 3"
+        />
+      </Field>
+    </div>
+  </section>
+</Layout>

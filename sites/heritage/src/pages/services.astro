@@ -1,0 +1,37 @@
+---
+import Field from "@shared/Field.astro";
+import PriceList from "@shared/PriceList.astro";
+import { site } from "@shared/site";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Services">
+  <section class="section wrap" style="padding-top: 2.5rem">
+    <p class="section-label">Services</p>
+    <h2>What we can put on the ticket.</h2>
+    <Field class="block" field={site.servicesIntro} as="p">
+      {site.servicesIntro.value}
+    </Field>
+    <Field class="block" field={site.services} as="div">
+      <div class="grid">
+        {
+          site.services.value.map((service) => (
+            <article class="service">
+              <h3>{service.name}</h3>
+              <p>{service.summary}</p>
+            </article>
+          ))
+        }
+      </div>
+    </Field>
+  </section>
+
+  <section class="section wrap">
+    <p class="section-label">Pricing</p>
+    <h2>Kill fees, cut & wrap, and travel.</h2>
+    <Field class="block" field={site.pricingNote} as="p">
+      {site.pricingNote.value}
+    </Field>
+    <PriceList />
+  </section>
+</Layout>

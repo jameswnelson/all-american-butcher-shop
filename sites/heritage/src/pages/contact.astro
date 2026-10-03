@@ -1,0 +1,59 @@
+---
+import Field from "@shared/Field.astro";
+import ShopMap from "@shared/ShopMap.astro";
+import { mapsUrl, site } from "@shared/site";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+  <section class="section wrap" style="padding-top: 2.5rem">
+    <p class="section-label">Visit</p>
+    <h2>Call, come by, or get directions.</h2>
+    <div class="split">
+      <div class="contact-stack">
+        <div class="panel">
+          <p class="section-label">Address</p>
+          <p>
+            <Field field={site.addressLine1} as="span">{site.addressLine1.value}</Field><br />
+            <Field field={site.addressLine2} as="span">{site.addressLine2.value}</Field>
+          </p>
+          <Field field={site.mapQuery}>
+            <a class="btn secondary" href={mapsUrl(site.mapQuery.value)}>Open in Google Maps</a>
+          </Field>
+        </div>
+        <div class="panel">
+          <p class="section-label">Call or write</p>
+          <p>
+            <Field field={site.phone}>
+              <a href={site.phoneHref.value}>{site.phone.value}</a>
+            </Field>
+          </p>
+          <p>
+            <Field field={site.email}>
+              <a href={`mailto:${site.email.value}`}>{site.email.value}</a>
+            </Field>
+          </p>
+          <p>
+            <a href={site.facebookUrl.value}>{site.facebookHandle.value} on Facebook</a>
+          </p>
+        </div>
+        <div class="panel hours">
+          <p class="section-label">Hours</p>
+          <Field class="block" field={site.hours} as="div">
+            <ul>
+              {
+                site.hours.value.map((row) => (
+                  <li>
+                    <span>{row.days}</span>
+                    <span>{row.time}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </Field>
+        </div>
+      </div>
+      <ShopMap />
+    </div>
+  </section>
+</Layout>
